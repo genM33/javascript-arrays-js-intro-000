@@ -1,7 +1,7 @@
 var chocolateBars = ["snickers", "hundred grand", "kitkat", "skittles"];
 
 var addElementToBeginningOfArray = (myArray, myElement) => {
-  myNewArray = [myElement, ...myArray];
+  var myNewArray = [myElement, ...myArray];
   return myNewArray;
 }
 
@@ -11,7 +11,7 @@ var destructivelyAddElementToBeginningOfArray = (myArray, myElement) => {
 }
 
 var addElementToEndOfArray = (myArray, myElement) => {
-  myNewArray = [...myArray, myElement];
+  var myNewArray = [...myArray, myElement];
   return myNewArray;
 }
 
@@ -41,3 +41,24 @@ var destructivelyRemoveElementFromEndOfArray = myArray => {
 function removeElementFromEndOfArray(myArray) {
   return myArray.slice(0, myArray.length-1);
 }
+
+/*
+Object.keys([1, 2, 'Garfield', 3]);
+console.log(Object.keys([1, 2, 'Garfield', 3]));
+*/
+
+// console.log(addElementToEndOfArray(chocolateBars, "nutella"));
+// console.log(chocolateBars);
+
+/*
+function destructivelyRemoveAndReplaceElementInTheMiddleOfArray(myArray) {
+  chocolateBars.splice(0, 2, 'goya', 'milky way', 'twix', 'baby ruth', 'butterfinger');
+  return chocolateBars;
+};
+console.log(destructivelyRemoveAndReplaceElementInTheMiddleOfArray(chocolateBars));
+*/
+
+function removeElementInTheMiddleOfArray(myArray) {
+  return [...myArray.slice(0,1), ...myArray.slice(2)];
+};
+console.log(removeElementInTheMiddleOfArray(chocolateBars));
